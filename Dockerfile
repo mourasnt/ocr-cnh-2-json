@@ -30,8 +30,7 @@ RUN apt-get install -y nodejs npm
 WORKDIR /app
 COPY . /app
 
-RUN npm install --global yarn
-RUN yarn install --prod
+RUN npm ci --only=production
 
 EXPOSE 8080
 CMD [ "node", "index.js" ]
